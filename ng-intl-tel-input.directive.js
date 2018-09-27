@@ -14,6 +14,14 @@ angular.module('ngIntlTelInput')
           if (attr.initialCountry) {
             ngIntlTelInput.set({initialCountry: attr.initialCountry});
           }
+            /*Enabling option to show dial code along with the flag when setting values. So that country dial
+            code is not included in the text box when setting the value in the ngModel.
+           */
+            if (attr.nationalMode) {
+                ngIntlTelInput.set({separateDialCode: false, nationalMode: attr.nationalMode});
+            } else {
+                ngIntlTelInput.set({separateDialCode: true});
+            }
           // Initialize.
           ngIntlTelInput.init(elm);
           // Set Selected Country Data.
